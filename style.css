@@ -1,80 +1,70 @@
-body {
-    margin: 0px;
-}
-
 .logo {
-    width: 80px;
-    margin-left: 50px;
+    width: 70px;
+    height: 70px;
+    margin: 0 40px;
+    padding: 3px 0px;
 }
 
 .header-container {
-    padding: 20px 0;
-    box-shadow: 0 0 5px rgba(0, 0, 0, .2);
-    background-color: #fff;
-    font-size: 18px;
+    padding: 5px 20px;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, .3);
+    font-size: 14px;
+    text-align: center;
 }
 
-.header-container .nav-menu {
+.nav-menu {
     width: calc(100% - 60px);
+}
+
+.nav-menu .list-menu {
     display: flex;
+    align-items: center;
+    list-style: none;
     justify-content: flex-end;
-    align-items: center;
 }
 
-.header-container .nav-menu .list-menu {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    list-style-type: none;
+.nav-menu .list-menu .menu-item {
+    list-style: none;
+    padding: 20px;
+    padding-right: 50px;
 }
 
-.header-container .nav-menu .menu-item {
-    padding: 0 15px;
-    list-style-type: none;
-}
-
-.header-container .nav-menu .item-link {
-    padding: 10px 0;
-    display: block;
-    position: relative;
+.nav-menu .list-menu .menu-item .item-link {
     color: black;
     text-decoration: none;
+    padding: 10px 0px;
+    position: relative;
+}
+
+.nav-menu .sub-menu {
+    display: none;
+    text-align: center;
+    position: absolute;
+    background-color: #eee;
+    padding: 10px 0;
+    list-style: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+    transition: all .3s;
+}
+
+.nav-menu li:hover>.sub-menu {
+    display: block;
 }
 
 .header-container .nav-menu .item-link:after {
-    content: '';
+    content: "";
     position: absolute;
-    bottom: 0;
-    width: 0;
+    top: 100%;
     left: 0;
-    height: 3px;
+    width: 0%;
+    height: 2px;
     background-color: #ccc;
-    transition: width 0.2s
-}
-
-.header-container .nav-menu .item-link.active:after,
-.header-container .nav-menu .item-link:hover:after {
-    width: 100%
-}
-
-.header-container .has-sub-menu {
-    position: relative
-}
-
-.header-container .has-sub-menu:hover .sub-menu {
-    opacity: 1;
-    visibility: visible;
-    top: 100%
-}
-
-.header-container .has-sub-menu .sub-menu {
-    position: absolute;
-    min-width: 100%;
-    background-color: #fff;
-    box-shadow: 0 0 4px rgba(0, 0, 0, .2);
-    z-index: 99;
-    padding: 10px 0;
+    transition: width .3s ease-in-out;
     opacity: 0;
-    visibility: hidden;
-    transition: all .3s
+}
+
+.header-container .nav-menu .menu-item:hover .item-link:after {
+    visibility: visible;
+    opacity: 1;
+    width: 100%;
 }
